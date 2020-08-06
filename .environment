@@ -1,7 +1,7 @@
-export USER=$(read .database[0].username)
-export PASSWORD=$(read .database[0].password)
-export HOST=$(read .database[0].host)
-export DATABASE=$(read .database[0].path)
+export USER=$(./reader.sh .database[0].username)
+export PASSWORD=$(./reader.sh .database[0].password)
+export HOST=$(./reader.sh .database[0].host)
+export DATABASE=$(./reader.sh .database[0].path)
 export JAVA_MEMORY=-Xmx$(jq .info.limits.memory /run/config.json)m
 export JAVA_OPTS="$JAVA_MEMORY -XX:+ExitOnOutOfMemoryError"
 export CREDENTIAL="-Dspring.data.mongodb.database=$DATABASE -Dspring.data.mongodb.host=$HOST -Dspring.data.mongodb.username=$USER -Dspring.data.mongodb.password=$PASSWORD"

@@ -14,7 +14,7 @@ disk: 1024
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
     build: |
-       cp read /usr/bin/read
+       chmod +x read
        mvn clean package
 
 # The relationships of the application with services or other applications.
