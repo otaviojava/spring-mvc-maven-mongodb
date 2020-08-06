@@ -1,3 +1,4 @@
+pwd 
 export USER=$(./reader.sh .database[0].username)
 export PASSWORD=$(./reader.sh .database[0].password)
 export HOST=$(./reader.sh .database[0].host)
